@@ -3,8 +3,7 @@
 #include "alg.h"
 
 
-double pown(double value, uint16_t n)
-{
+double pown(double value, uint16_t n) {
 	double Result = 1.0;
 	uint16_t i = 0;
 	for (i = 0; i < n; ++i) {
@@ -13,8 +12,7 @@ double pown(double value, uint16_t n)
 	return Result;
 }
 
-uint64_t fact(uint16_t n)
-{
+uint64_t fact(uint16_t n) {
 	uint64_t Result = 1;
 	uint16_t i = 0;
 	for (i = 1; i <= n; ++i) {
@@ -23,8 +21,7 @@ uint64_t fact(uint16_t n)
 	return Result;
 }
 
-double calcItem(double x, uint16_t n)
-{
+double calcItem(double x, uint16_t n) {
 	double Result = 0;
 	Result = (double)pown(x, n) / (double)fact(n);
 	return Result;
@@ -33,57 +30,37 @@ double calcItem(double x, uint16_t n)
 double expn(double x, uint16_t count) {
 	double Result = 0;
 	uint16_t i = 0;
-	for ( i = 0; i <= count; i++) {
+	for (i = 0; i <= count; i++) {
 		Result = Result + calcItem(x, i);
 	}
 	return Result;
 }
+
 double sinn(double x, uint16_t count) {
 	double Result = 0.0;
 	uint16_t i = 0;
-	for (i = 0; i < count; ++i)
-	{
-		if (i % 2 == 0)
-		{
+	for (i = 0; i < count; ++i) {
+		if (i % 2 == 0) {
 			Result = Result + ((double)1.0 * (double)calcItem(x, 2 * i + 1));
 		}
-		else
-		{
+		else {
 			Result = Result + ((double)-1.0 * (double)calcItem(x, 2 * i + 1));
 		}
 	}
 	return Result;
 }
 
-
-
 double cosn(double x, uint16_t count) {
 	double Result = 0.0;
 	uint16_t i = 0;
-
 	for (i = 0; i < count; i++) {
-
 		if (i % 2 == 0)
 		{
 			Result = Result + ((double)1.0 * (double)calcItem(x, 2 * i));
 		}
-		else
-		{
+		else {
 			Result = Result + ((double)-1.0 * (double)calcItem(x, 2 * i));
 		}
 	}
 	return Result;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
