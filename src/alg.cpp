@@ -22,7 +22,7 @@ uint64_t fact(uint16_t n) {
 
 double calcItem(double x, uint16_t n) {
            double Result = 0;
-            Result = (double)pown(x, n) / (double)fact(n);
+            Result = pown(x, n) / fact(n);
             return Result;
 }
 
@@ -40,9 +40,9 @@ double sinn(double x, uint16_t count) {
         uint16_t i = 0;
         for (i = 0; i < count; ++i) {
                 if (i % 2 == 0) {
-                        Result = Result + ((double)1.0 * (double)calcItem(x, 2 * i + 1));
+                        Result = Result + (1.0 * calcItem(x, 2 * i + 1));
                 } else {
-                        Result = Result + ((double)-1.0 * (double)calcItem(x, 2 * i + 1));
+                        Result = Result + (-1.0 * calcItem(x, 2 * i + 1));
                        }
               }
            return Result;
@@ -53,9 +53,9 @@ double cosn(double x, uint16_t count) {
         uint16_t i = 0;
         for (i = 0; i < count; i++) {
                 if (i % 2 == 0) {
-                        Result = Result + ((double)1.0 * (double)calcItem(x, 2 * i));
+                        Result = Result + (1.0 * calcItem(x, 2 * i));
                 } else {
-                        Result = Result + ((double)-1.0 * (double)calcItem(x, 2 * i));
+                        Result = Result + (-1.0 * calcItem(x, 2 * i));
                    }
           }
           return Result;
